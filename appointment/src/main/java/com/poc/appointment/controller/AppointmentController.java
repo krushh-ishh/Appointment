@@ -1,9 +1,15 @@
 package com.poc.appointment.controller;
 
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.*;
 
+import com.poc.appointment.controller.business.AppointmentService;
 import com.poc.appointment.entity.*;
 
 @RestController
@@ -11,12 +17,70 @@ public class AppointmentController {
 	
 	//rest controller will return JSON object in list
 	
+	@Autowired(required =true)
+	private AppointmentService appointmentService;
+	
+	
+	//Get method.... by defualt
 	@RequestMapping("/appointment-list")
 	public List<Appointment> getAllAppoitnments(){
 		
-		return Arrays.asList(
-				new Appointment(1,"kas","a","s","s"));
+		return appointmentService.getAllAppointments();
 		
 	}
+	
+	@RequestMapping("/appointment-list/{id}")
+	public Appointment getAppointment(@PathVariable int id) {
+		return appointmentService.getAppointment(id);
+		
+	}
+	
+	//Post method
+	@RequestMapping(method = RequestMethod.POST, value = "/appointment-list")
+	public void addAppointment(@RequestBody Appointment appointment) {
+		appointmentService.addAppointment(appointment);
+	}
+	
+	//PUT method----Update
+	@RequestMapping(method = RequestMethod.PUT, value = "/appointment-list/{id}")
+	public void addAppointment(@RequestBody Appointment appointment, @PathVariable int id) {
+		appointmentService.updateAppointment(appointment,id);
+	}
+
+	//DELETE method
+	@RequestMapping("/appointment-list/{id}")
+	public void deleteAppointment(@PathVariable int id) {
+		 appointmentService.deleteAppointment(id);
+		
+	}
+	
+	
+	
+	//integration of api
+	//frontend
+	//date fromate
+	//appropriate flow of application
+	//junit
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	bb
+	
+	
+	
+	
+	
 
 }
