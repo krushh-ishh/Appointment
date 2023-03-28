@@ -1,5 +1,7 @@
 package com.poc.appointment.controller;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,13 +12,13 @@ import com.poc.appointment.business.AppointmentList;
 import com.poc.appointment.business.IAppointmentList;
 import com.poc.appointment.entity.Appointment;
 
-@RestController
+@Controller
 public class HomeController {
 
 	@RequestMapping("/")
 	public String index() {
 		System.out.println("hello");
-		return "hello";
+		return "index";
 	}
 	
 	@RequestMapping("/input")

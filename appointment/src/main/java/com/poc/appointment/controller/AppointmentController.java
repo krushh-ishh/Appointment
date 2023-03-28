@@ -2,6 +2,7 @@ package com.poc.appointment.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +20,8 @@ public class AppointmentController {
 	
 	@Autowired(required =true)
 	private AppointmentService appointmentService;
+	
+	
 	
 	
 	//Get method.... by defualt
@@ -48,9 +51,10 @@ public class AppointmentController {
 	}
 
 	//DELETE method
-	@RequestMapping("/appointment-list/{id}")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/appointment-list/{id}")
 	public void deleteAppointment(@PathVariable int id) {
 		 appointmentService.deleteAppointment(id);
+		 
 		
 	}
 	
@@ -61,23 +65,6 @@ public class AppointmentController {
 	//date fromate
 	//appropriate flow of application
 	//junit
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	bb
-	
 	
 	
 	
