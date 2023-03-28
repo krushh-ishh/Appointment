@@ -16,7 +16,7 @@ public class BookAppointment {
 		return "createAppointment";
 	}
 	
-	@PostMapping("/book-appointment")
+	@PostMapping("/booked-appointment")
 	public String bookappointment(@ModelAttribute Appointment appointment) {
 		
 		System.out.println(appointment);
