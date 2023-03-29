@@ -40,8 +40,9 @@ public class AppointmentController {
 	
 	//Post method
 	@RequestMapping(method = RequestMethod.POST, value = "/appointment-list")
-	public void addAppointment(@RequestBody Appointment appointment) {
+	public String addAppointment(@RequestBody Appointment appointment) {
 		appointmentService.addAppointment(appointment);
+		return "Sucessfull";
 	}
 	
 	//PUT method----Update
@@ -66,7 +67,7 @@ public class AppointmentController {
 	//appropriate flow of application
 	//junit
 	
-	
+	//http://localhost:8080/appointment-list
 	
 	
 

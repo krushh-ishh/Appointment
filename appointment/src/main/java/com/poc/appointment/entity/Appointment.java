@@ -1,7 +1,9 @@
 package com.poc.appointment.entity;
 
+
 public class Appointment {
 
+	
 	private int appointmentId;
 	private String userId;
 	private String appointmentDay;
