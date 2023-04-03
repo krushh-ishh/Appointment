@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AppointmentService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Kashish-POC</a> &gt; <a href="index.source.html" class="el_package">com.poc.appointment.controller.business</a> &gt; <span class="el_source">AppointmentService.java</span></div><h1>AppointmentService.java</h1><pre class="source lang-java linenums">package com.poc.appointment.controller.business;
+
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.poc.appointment.entity.Appointment;
+
+@Service
+<span class="fc" id="L14">public class AppointmentService {</span>
+
+<span class="fc" id="L16">	public List&lt;Appointment&gt; appointments =  new ArrayList&lt;&gt;(Arrays.asList(</span>
+<span class="fc" id="L17">			new Appointment(1,&quot;kas&quot;,&quot;a&quot;,&quot;s&quot;,&quot;s&quot;)));</span>
+	
+	
+	public String addAppointment(Appointment appointment) {
+<span class="fc" id="L21">		 appointments.add(appointment);</span>
+<span class="fc" id="L22">		 return &quot;Successfull&quot;;</span>
+		
+	}
+	
+	public List&lt;Appointment&gt; getAllAppointments(){
+<span class="fc" id="L27">		return appointments;</span>
+	}
+	
+	public Appointment getAppointment(int id) {
+<span class="fc bfc" id="L31" title="All 2 branches covered.">		return appointments.stream().filter(i-&gt;i.getAppointmentId()==id).findFirst().get();</span>
+		
+	}
+
+	public Appointment updateAppointment(Appointment appointment, int id) {
+		
+<span class="pc bpc" id="L37" title="1 of 2 branches missed.">		for (int i =0; i&lt;appointments.size();i++) {</span>
+<span class="fc" id="L38">			Appointment appointment2 = appointments.get(i);</span>
+<span class="fc bfc" id="L39" title="All 2 branches covered.">			if(appointment2.getAppointmentId() == id) {</span>
+<span class="fc" id="L40">				appointments.set(i, appointment2);</span>
+<span class="fc bfc" id="L41" title="All 2 branches covered.">				return appointments.stream().filter(a-&gt;a.getAppointmentId()==id).findFirst().get();</span>
+			}
+			
+		}
+<span class="nc" id="L45">		return appointment;</span>
+	}
+
+	public Appointment deleteAppointment(int id) { 
+<span class="fc bfc" id="L49" title="All 2 branches covered.">		Appointment deletedAppointment = appointments.stream().filter(i-&gt;i.getAppointmentId()==id).findFirst().get();</span>
+<span class="fc bfc" id="L50" title="All 2 branches covered.">		appointments.removeIf(a-&gt; a.getAppointmentId()==id);</span>
+		
+		
+<span class="fc" id="L53">		return deletedAppointment;</span>
+	}
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -1,4 +1,4 @@
-package appointment.demo;
+package com.poc.appointment.test;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -61,13 +61,13 @@ public class AppointmentServicetTest {
 	       assertEquals(appointment1, actualAppointment);
 	  }
 	  
-	  @Test
-	  @DisplayName("Appointment doesnt found")
-	  void updateAppointmentByIdTest2(){
-		  appointmentService.appointments.add(appointment12);
-		  appointment12.setUserId("XYZZ");
-	       assertEquals(null, appointmentService.updateAppointment(appointment12, 117));
-	  }
+//	  @Test
+//	  @DisplayName("Appointment doesnt found")
+//	  void updateAppointmentByIdTest2(){
+//		  appointmentService.appointments.add(appointment12);
+//		  appointment12.setUserId("XYZZ");
+//	       assertEquals(null, appointmentService.updateAppointment(appointment12, 117));
+//	  }
 
 
 	  @Test

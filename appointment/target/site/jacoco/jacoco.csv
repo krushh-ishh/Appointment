@@ -1,0 +1,9 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+Kashish-POC,com.poc.appointment.entity,Appointment,28,25,0,0,12,10,8,3,8,3
+Kashish-POC,com.poc.appointment.controller.business,AppointmentService,2,127,1,11,1,15,1,15,0,10
+Kashish-POC,com.poc.appointment.repository,AppointmentRepo,3,0,0,0,1,0,1,0,1,0
+Kashish-POC,com.poc.appointment.controller,BookAppointment,10,0,0,0,4,0,3,0,3,0
+Kashish-POC,com.poc.appointment.controller,HomeController,63,0,0,0,17,0,6,0,6,0
+Kashish-POC,com.poc.appointment.controller,AppointmentAppStarter,8,0,0,0,3,0,2,0,2,0
+Kashish-POC,com.poc.appointment.controller,AppointmentController,33,0,0,0,9,0,6,0,6,0
+Kashish-POC,com.poc.appointment.business,AppointmentList,36,0,2,0,9,0,8,0,7,0

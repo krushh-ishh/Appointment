@@ -1,4 +1,4 @@
-package appointment.demo;
+package com.poc.appointment.test;
 
 import org.junit.runner.RunWith;
 import org.mockito.junit.MockitoJUnitRunner;

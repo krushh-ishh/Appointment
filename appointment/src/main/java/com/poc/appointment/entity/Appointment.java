@@ -1,9 +1,12 @@
 package com.poc.appointment.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+@Entity
 public class Appointment {
-
 	
+	@Id
 	private int appointmentId;
 	private String userId;
 	private String appointmentDay;
@@ -21,19 +24,21 @@ public class Appointment {
 		this.appointmentWith = appointmentWith;
 	}
 	
+	public void setUserId(String userId) {
+		this.userId = userId;
+	} 
 	
 	public int getAppointmentId() {
 		return appointmentId;
 	}
+	
 	public void setAppointmentId(int appointmentId) {
 		this.appointmentId = appointmentId;
 	}
 	public String getUserId() {
 		return userId;
 	}
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
+	
 	public String getAppointmentDay() {
 		return appointmentDay;
 	}

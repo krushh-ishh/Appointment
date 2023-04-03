@@ -22,8 +22,6 @@ public class AppointmentController {
 	private AppointmentService appointmentService;
 	
 	
-	
-	
 	//Get method.... by defualt
 	@RequestMapping("/appointment-list")
 	public List<Appointment> getAllAppoitnments(){
@@ -47,8 +45,8 @@ public class AppointmentController {
 	
 	//PUT method----Update
 	@RequestMapping(method = RequestMethod.PUT, value = "/appointment-list/{id}")
-	public void addAppointment(@RequestBody Appointment appointment, @PathVariable int id) {
-		appointmentService.updateAppointment(appointment,id);
+	public void updateAppointment(@RequestBody Appointment appointment, @PathVariable int id) {
+		appointmentService.updateAppointment(appointment,appointment.getAppointmentId());
 	}
 
 	//DELETE method

@@ -14,10 +14,8 @@ import com.poc.appointment.entity.Appointment;
 public class AppointmentService {
 
 	public List<Appointment> appointments =  new ArrayList<>(Arrays.asList(
-			new Appointment(1,"kas","a","s","s"),
-			new Appointment(2,"kas","a","s","s"),
-			new Appointment(3,"kas","a","s","s"),
-			new Appointment(4,"kas","a","s","s")));
+			new Appointment(1,"kas","a","s","s")));
+	
 	
 	public String addAppointment(Appointment appointment) {
 		 appointments.add(appointment);
@@ -44,7 +42,7 @@ public class AppointmentService {
 			}
 			
 		}
-		return null;
+		return appointment;
 	}
 
 	public Appointment deleteAppointment(int id) { 
