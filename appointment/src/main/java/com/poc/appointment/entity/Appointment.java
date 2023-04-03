@@ -1,16 +1,31 @@
 package com.poc.appointment.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "appointment_record")
 public class Appointment {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column
 	private int appointmentId;
+	
+	@Column
 	private String userId;
+	
+	@Column
 	private String appointmentDay;
+	
+	@Column
 	private String appointmentTime;
+	
+	@Column
 	private String appointmentWith;
 	
 	
